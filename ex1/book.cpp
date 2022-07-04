@@ -1,4 +1,4 @@
-#include "book.h"
+#include "headers/book.h"
 
 Book::Book(string* input_title, int input_price, float input_sales_last_3_months[3], int input_page_count) :Publication(input_title, input_price), Sales(input_sales_last_3_months) {
     page_count = input_page_count;
@@ -17,9 +17,6 @@ ostream& operator<<(ostream& os, const Book& book) {
     for (int i = 0; i < 3; i++) {
         os << book.sales_last_3_months[i] << ", ";
     }
-    os << "\b";
-    os << "\b";
-    os << ".";
     os << "\n";
     return os;
 }

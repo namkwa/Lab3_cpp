@@ -1,4 +1,4 @@
-clean: ; rm *.out *.gch
+clean: ; rm *.out
 
-run: ; g++ main.cpp book.h book.cpp audio.h audio.cpp publication.h publication.cpp sales.h sales.cpp
-	./a.out
+run: ; g++ -Wall -Wextra -o executable.out main.cpp headers/book.h book.cpp headers/audio.h audio.cpp headers/publication.h publication.cpp headers/sales.h sales.cpp
+	./executable.out

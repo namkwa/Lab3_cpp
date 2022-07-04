@@ -1,5 +1,5 @@
-#include "book.h"
-#include "audio.h"
+#include "headers/book.h"
+#include "headers/audio.h"
 
 int main() {
     string book_title = "book title";
@@ -10,5 +10,6 @@ int main() {
     Audio audio = Audio(&audio_title, 12, sales_audio, 50.2, 5);
     Audio audio_copy = Audio(audio);
     cout << book;
+    cout << audio_copy;
     return 0;
 }

@@ -1,4 +1,4 @@
-#include "publication.h"
+#include "headers/publication.h"
 
 Publication::Publication(string* input_title, int input_price) {
     title = new string;
