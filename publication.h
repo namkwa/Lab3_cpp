@@ -11,9 +11,9 @@ public:
     int price;
     Publication(string* title, int price);
     Publication(const Publication& publication);
-    Publication& Publication::operator=(const Publication& publication);
+    Publication& operator=(const Publication& publication);
     ~Publication();
-    friend ostream& Publication::operator<<(ostream& os, const Publication& publication);
+    friend ostream& operator<<(ostream& os, const Publication& publication);
 };
 
 #endif

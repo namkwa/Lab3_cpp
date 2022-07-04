@@ -1,10 +1,10 @@
 #include "book.h"
 
-Book::Book(string* input_title, int input_price, int input_page_count) :Publication(input_title, input_price) {
+Book::Book(string* input_title, int input_price, float input_sales_last_3_months[3], int input_page_count) :Publication(input_title, input_price), Sales(input_sales_last_3_months) {
     page_count = input_page_count;
 };
 
-Book::Book(const Book& book) :Publication(book) {
+Book::Book(const Book& book) :Publication(book), Sales(book) {
     page_count = book.page_count;
 }
 

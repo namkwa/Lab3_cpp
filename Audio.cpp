@@ -1,11 +1,11 @@
 #include "audio.h"
 
-Audio::Audio(string* input_title, int input_price, float input_MB, int input_minutes) :Publication(input_title, input_price) {
+Audio::Audio(string* input_title, int input_price, float input_sales_last_3_months[3], float input_MB, int input_minutes) :Publication(input_title, input_price), Sales(input_sales_last_3_months) {
     MB = input_MB;
     minutes = input_minutes;
 }
 
-Audio::Audio(const Audio& audio) :Publication(audio) {
+Audio::Audio(const Audio& audio) :Publication(audio), Sales(audio) {
     MB = audio.MB;
     minutes = audio.minutes;
 }
