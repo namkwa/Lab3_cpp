@@ -6,7 +6,6 @@
 using namespace std;
 
 class Publication {
-private:
 public:
     string* title;
     int price;

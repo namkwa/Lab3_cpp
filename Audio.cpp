@@ -4,8 +4,6 @@
 using namespace std;
 
 class Audio :public Publication {
-private:
-
 public:
     float MB;
     int minutes;
@@ -16,7 +14,8 @@ public:
 };
 
 int main() {
-    string title = (string)"oui";
+    std::string title = "oui";
     Audio audio = Audio(&title, 10, 1.2, 20);
     cout << audio.MB;
+    return 0;
 }
