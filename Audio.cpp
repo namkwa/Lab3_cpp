@@ -1,21 +1,20 @@
-#include "publication.h"
-#include <string>
-#include <iostream>
-using namespace std;
+#include "audio.h"
 
-class Audio :public Publication {
-public:
-    float MB;
-    int minutes;
-    Audio(string* input_title, int input_price, float input_MB, int input_minutes) :Publication(input_title, input_price) {
-        MB = input_MB;
-        minutes = input_minutes;
-    }
-};
+Audio::Audio(string* input_title, int input_price, float input_MB, int input_minutes) :Publication(input_title, input_price) {
+    MB = input_MB;
+    minutes = input_minutes;
+}
 
-int main() {
-    std::string title = "oui";
-    Audio audio = Audio(&title, 10, 1.2, 20);
-    cout << audio.MB;
-    return 0;
+Audio::Audio(const Audio& audio) :Publication(audio) {
+    MB = audio.MB;
+    minutes = audio.minutes;
+}
+
+Audio& Audio::operator=(const Audio& audio) {
+    return *this;
+}
+
+ostream& operator<<(ostream& os, const Audio& audio) {
+    os << audio.title << " costs " << audio.price << " $ and weigth " << audio.MB << " MB for a duration of " << audio.minutes;
+    return os;
 }
