@@ -1,7 +1,8 @@
 #include "publication.h"
 
 Publication::Publication(string* input_title, int input_price) {
-    title = input_title;
+    title = new string;
+    *title = *input_title;
     price = input_price;
 }
 
@@ -20,6 +21,6 @@ Publication::~Publication() {
 }
 
 ostream& operator<<(ostream& os, const Publication& publication) {
-    os << publication.title << " costs " << publication.price << " $";
+    os << *(publication.title) << " costs " << publication.price << " $\n";
     return os;
 }

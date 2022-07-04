@@ -13,6 +13,13 @@ Book& Book::operator=(const Book& book) {
 }
 
 ostream& operator<<(ostream& os, const Book& book) {
-    os << book.title << " costs " << book.price << " $ and has " << book.page_count << "pages";
+    os << *(book.title) << " costs " << book.price << " $ and has " << book.page_count << " pages. Here are the sales over the last 3 months ";
+    for (int i = 0; i < 3; i++) {
+        os << book.sales_last_3_months[i] << ", ";
+    }
+    os << "\b";
+    os << "\b";
+    os << ".";
+    os << "\n";
     return os;
 }
