@@ -5,7 +5,7 @@
 using namespace std;
 class Sales {
 public:
-    float* sales_last_3_months;
+    float** sales_last_3_months;
     Sales(float* sales_last_3_months);
     Sales(const Sales& sales);
     Sales& operator=(const Sales& sales);
